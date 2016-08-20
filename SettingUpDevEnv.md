@@ -1,8 +1,8 @@
-#Setting up ReactNative Dev environment on Windows
+# Setting up ReactNative Dev environment on Windows
 
-##Setting up reactnative / android dev environment
+## Setting up reactnative / android dev environment
 
-###software dependencies:
+### software dependencies:
 
 Install the following:
 
