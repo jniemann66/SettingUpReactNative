@@ -44,6 +44,8 @@ you may need to install a system image for the device you created. This is done 
 
 OR alternatively, use the GUI in **Android Studio**
  
+Note: Although the devices you are targeting will likely have ARM cpus in them, when developing on an intel computer (which is pretty much all computers these days) you will get much better emulator performance when emulating an android device with an Intel processor. To do this, you need to install [Intel HAXM](https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager "Intel HAXM")
+
 (you will probably be asked to switch-off Hyper-V and reboot)
 
 ---
