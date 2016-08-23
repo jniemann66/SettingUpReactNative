@@ -16,7 +16,7 @@ to generate a key, we use **keytool** which is part of the Java Development Kit
 
 		 $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 
-You will be prompted for passwords and Distinguised name fields (first & last name, ou, organization, City, State, 2-letter country code). Keep all the information you provide safe and private !
+You will be prompted for passwords and Distinguished name fields (first & last name, ou, organization, City, State, 2-letter country code). Keep all the information you provide safe and private !
 
 ### Put the my-release-key.keystore file into the android/app folder of your project
 
