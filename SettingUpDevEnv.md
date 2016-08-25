@@ -93,3 +93,10 @@ If you get this error:
 	failed to find Build Tools revision 23.0.1
 
 ... then Android SDK manager (**android sdk**) and install the correct version of build tools (it's quite fussy about having the right version installed). 
+
+### Forcing a rebundle of debug build
+
+This may be necessary if **react-native run-android** does not "notice" that you have made changes to your code, (and keeps skipping the **bundleDebugJsAndAssets** stage) ! 
+It runs the **react-native bundle** command with the correct parameters to bundle the app.
+
+	react-native bundle --platform android --dev true --reset-cache --entry-file index.android.js --bundle-output "AbsolutePathToProject\app\build\intermediates\assets\debug\index.android.bundle" --assets-dest "AbsolutePathToProject\android\app\build\intermediates\res\merged\debug"
