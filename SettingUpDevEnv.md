@@ -6,9 +6,20 @@
 
 Install the following:
 
-[node.js](https://nodejs.org/en/ "node.js")
+**[node.js](https://nodejs.org/en/ "node.js")**
 
 ReactNative CLI: **npm install -g react-native-cli** 
+
+**Watchman.exe** 
+
+[http://bit.ly/watchmanwinalpha](http://bit.ly/watchmanwinalpha "http://bit.ly/watchmanwinalpha")
+
+[https://facebook.github.io/watchman/docs/install.html](https://facebook.github.io/watchman/docs/install.html "https://facebook.github.io/watchman/docs/install.html")
+
+(copy the watchman.exe file to somewhere in your Path).
+
+*Note:  Watchman's job is to watch for files which have changed, so that Hot-reloading can rebuild relevant parts of your project when you make changes to your source. I have had some weird problems with Watchman. Hot reloading (an important feature of the reactnative development process) is a bit intermittent. When it works - it's great. when it doesn't, it's extremely frustrating. I am still trying to determine why it works sometimes and not other times on my system. I will document my findings here when and if I get to the bottom of the problem*
+
 
 [Android Studio](https://developer.android.com/studio/install.html) (requires Java, and takes about 400 years to install !). Android Studio will put a copy of the Android SDK in your user profile !
 
