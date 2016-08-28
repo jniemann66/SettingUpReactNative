@@ -1,5 +1,9 @@
 # Command Reference
 
+28th August 2016
+
+*warning: this stuff is constantly changing, and may become out of date soon.*
+
 ### react-native
 
 $ react-native --help
