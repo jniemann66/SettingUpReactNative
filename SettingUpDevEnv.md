@@ -86,7 +86,7 @@ To set the phone to use the IP and port of the dev server, **shake the phone whi
 
 ### Setting up a GenyMotion Android emulator
 
-The Genymotion Anroid Emulator is faster than the AVD emulator. However, it uses it's own adb server which causes a conflict with the SDK adb server. To fix this, in Genymotion, open Settings/ADB and choose 'Use custom Android SDK Tools' then set the path to the Android SDK
+The Genymotion Android Emulator is faster than the AVD emulator. However, it uses it's own adb server which causes a conflict with the SDK adb server. To fix this, in Genymotion, open Settings/ADB and choose 'Use custom Android SDK Tools' then set the path to the Android SDK
 
 ### Creating and running a project:
 
