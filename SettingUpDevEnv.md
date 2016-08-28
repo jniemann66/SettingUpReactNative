@@ -59,6 +59,8 @@ Note: Although the devices you are targeting will likely have ARM cpus in them, 
 
 (you will probably be asked to switch-off Hyper-V and reboot)
 
+*Note: the "rage shake" menu can be accessed by **Ctrl-M** (this works on AVD emulator and GenyMotion)*
+
 ---
 
 
@@ -81,6 +83,10 @@ To allow incoming connections, ensure that the dev server port is open on the de
 To set the phone to use the IP and port of the dev server, **shake the phone while app is running** to open dev settings
 
 ---
+
+### Setting up a GenyMotion Android emulator
+
+The Genymotion Anroid Emulator is faster than the AVD emulator. However, it uses it's own adb server which causes a conflict with the SDK adb server. To fix this, in Genymotion, open Settings/ADB and choose 'Use custom Android SDK Tools' then set the path to the Android SDK
 
 ### Creating and running a project:
 
