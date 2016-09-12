@@ -12,6 +12,8 @@ ReactNative CLI: **npm install -g react-native-cli**
 
 **Watchman.exe** 
 
+**see note below regarding troubleshooting watchman errors*
+
 [http://bit.ly/watchmanwinalpha](http://bit.ly/watchmanwinalpha "http://bit.ly/watchmanwinalpha")
 
 [https://facebook.github.io/watchman/docs/install.html](https://facebook.github.io/watchman/docs/install.html "https://facebook.github.io/watchman/docs/install.html")
@@ -117,3 +119,62 @@ This may be necessary if **react-native run-android** does not "notice" that you
 It runs the **react-native bundle** command with the correct parameters to bundle the app.
 
 	react-native bundle --platform android --dev true --reset-cache --entry-file index.android.js --bundle-output "AbsolutePathToProject\app\build\intermediates\assets\debug\index.android.bundle" --assets-dest "AbsolutePathToProject\android\app\build\intermediates\res\merged\debug"
+
+
+----------
+
+
+### *Troubleshooting watchman erors
+
+As noted above, file-watching with watchman.exe (which hot-reloading depends upon ...) can be a bit temperamental.
+I have noticed that it is often necessary to start the packager a few times before watchman will work properly. The following output snippets from **react-native start** show the difference between a good start and a bad one:
+
+Bad Start:
+
+	React packager ready.
+	
+	FileWatcher {
+	  domain: null,
+	  _events: { all: [Function: bound _onFileChange] },
+	  _eventsCount: 1,
+	  _maxListeners: undefined,
+	  _watcherByRoot: {},
+	  _loading: Promise { <pending> } }
+	Failed to build DependencyGraph: Watchman error: Watcher took too long to load (WatchmanWatcher)
+	Try running `watchman version` from your terminal
+	https://facebook.github.io/watchman/docs/troubleshooting.html. Make sure watchman is running for this project. See https://facebook.github.io/watchman/docs/troubleshooting.html.
+	Error: Watchman error: Watcher took too long to load (WatchmanWatcher)
+	Try running `watchman version` from your terminal
+	https://facebook.github.io/watchman/docs/troubleshooting.html. Make sure watchman is running for this project. See https://facebook.github.io/watchman/docs/troubleshooting.html.
+
+Good Start:
+
+	React packager ready.
+
+	FileWatcher {
+	  domain: null,
+	  _events: { all: [Function: bound _onFileChange] },
+	  _eventsCount: 1,
+	  _maxListeners: undefined,
+	  _watcherByRoot: {},
+	  _loading: Promise { <pending> } }
+	[11:27:00 AM] <END>   Crawling File System (1678ms)
+	[11:27:00 AM] <START> Building in-memory fs for JavaScript
+	[11:27:01 AM] <END>   Building in-memory fs for JavaScript (634ms)
+	[11:27:01 AM] <START> Building in-memory fs for Assets
+	[11:27:02 AM] <END>   Building in-memory fs for Assets (583ms)
+	[11:27:02 AM] <START> Building Haste Map
+	[11:27:02 AM] <START> Building (deprecated) Asset Map
+	[11:27:02 AM] <END>   Building (deprecated) Asset Map (173ms)
+	[11:27:02 AM] <END>   Building Haste Map (428ms)
+	[11:27:02 AM] <END>   Building Dependency Graph (3342ms)
+	[11:27:06 AM] <START> request:/index.android.bundle?platform=android&dev=true&hot=true&minify=false
+	[11:27:06 AM] <START> find dependencies
+	transformed 634/634 (100%)
+	[11:27:08 AM] <END>   find dependencies (1699ms)
+	[11:27:08 AM] <END>   request:/index.android.bundle?platform=android&dev=true&hot=true&minify=false (1850ms)
+	[Hot Module Replacement] Client connected
+	[Hot Module Replacement] File change detected (13:4:25:262)
+	[1:04:58 PM] <START> find dependencies
+	[1:04:58 PM] <END>   find dependencies (2ms)
+	[Hot Module Replacement] Sending HMR update to client (13:4:58:985)
