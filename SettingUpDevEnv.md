@@ -178,3 +178,5 @@ Good Start:
 	[1:04:58 PM] <START> find dependencies
 	[1:04:58 PM] <END>   find dependencies (2ms)
 	[Hot Module Replacement] Sending HMR update to client (13:4:58:985)
+
+Facebook troubleshooting page for Watchman: [https://facebook.github.io/watchman/docs/troubleshooting.html](https://facebook.github.io/watchman/docs/troubleshooting.html "Troubleshooting")
